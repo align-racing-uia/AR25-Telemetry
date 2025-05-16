@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/mariu/Documents/Test2/asl
+# Install script for directory: C:/Users/mariu/Documents/AR25-Telemetry/asl
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,11 +34,11 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-objdump.exe")
+  set(CMAKE_OBJDUMP "C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/arm-none-eabi-objdump.exe")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/mariu/Documents/Test2/build/debug/asl/libs/rtt/cmake_install.cmake")
+  include("C:/Users/mariu/Documents/AR25-Telemetry/build/debug/asl/libs/rtt/cmake_install.cmake")
 endif()
 

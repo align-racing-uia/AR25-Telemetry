@@ -81,7 +81,9 @@ void CAN_Read(){
     // Check CAN2 messages
     while(Align_CAN_Receive(&hfdcan2, &rxHeader, rxData)){
         Process_CAN_Message(&rxHeader, rxData);
+        
     }
+    
 
     // Check CAN3 messages
     while(Align_CAN_Receive(&hfdcan3, &rxHeader, rxData)){

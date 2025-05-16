@@ -32,7 +32,8 @@
 #include "queue.h"
 #include "task.h"
 #include "usbd_cdc_if.h"
-
+#include "aligncan.h"
+#include "fdcan.h"
 void BlinkRLEDTask(void *argument);  // Forward declaration
 void CANTask(void *argument);  // Forward declaration
 void UARTSendTask(void *argument);  // Forward declaration
@@ -194,6 +195,8 @@ void BlinkRLEDTask(void *argument)
         //Print("Catastrophic fault happened\n\r");
       char usb_msg[] = "Hello World\r\n";
       CDC_Transmit_FS((uint8_t *)usb_msg, strlen(usb_msg));
+
+      Align_CAN_Send(&hfdcan2, 0x12, 0 ,0,0);
 
         
     }
