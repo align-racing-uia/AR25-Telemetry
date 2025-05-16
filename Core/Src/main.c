@@ -110,21 +110,29 @@ int main(void)
   /* USER CODE END 2 */
 
   /* Init scheduler */
-  osKernelInitialize();
+  // osKernelInitialize();
 
-  /* Call init function for freertos objects (in cmsis_os2.c) */
-  MX_FREERTOS_Init();
+  // /* Call init function for freertos objects (in cmsis_os2.c) */
+  // MX_FREERTOS_Init();
 
-  /* Start scheduler */
-  osKernelStart();
+  // /* Start scheduler */
+  // osKernelStart();
 
   /* We should never get here as control is now taken by the scheduler */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  uint32_t timestamp = HAL_GetTick();
+
   while (1)
   {
     /* USER CODE END WHILE */
+    if(timestamp + 100 <= HAL_GetTick()){
+      uint8_t data[8] = {0};
+      Align_CAN_Send(&hfdcan2, 0x12, data, 8, false);
+      Align_CAN_Send(&hfdcan3, 0x12, data, 8, false);
+      timestamp = HAL_GetTick();
+    }
 
     /* USER CODE BEGIN 3 */
   }
