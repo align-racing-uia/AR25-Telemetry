@@ -79,4 +79,5 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     #Core/Src/usb.c
     Core/Src/CAN_receive.c
     Core/Src/Transmitt.c # hvis den finnes
+    Core/Src/VN-200.c
 )

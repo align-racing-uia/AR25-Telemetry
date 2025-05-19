@@ -2,120 +2,118 @@
 #include "fdcan.h"
 #include "stdbool.h"
 #include <string.h>
-#include "cmsis_os.h" // Eller "FreeRTOS.h" og "queue.h" hvis du bruker de direkte.
+#include "cmsis_os.h"
 #include "FreeRTOS.h"
 #include "queue.h"
 #include "app_freertos.h"
+#include "Transmitt.h"  // <-- Payload_t definition
 
 // Define FDCAN handles
 extern FDCAN_HandleTypeDef hfdcan2;
 extern FDCAN_HandleTypeDef hfdcan3;
-void CANtest();
-uint8_t rxData[8];
 
 extern QueueHandle_t Tx;
 
+void Process_CAN_Message(FDCAN_RxHeaderTypeDef *header, uint8_t *data);
+void Process_CAN3_Message(FDCAN_RxHeaderTypeDef *header, uint8_t *data);
+void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs);
+
+uint8_t rxData[8] = {0, 1, 2, 3, 4, 5, 6, 7};
 
 
-void Process_CAN_Message(FDCAN_RxHeaderTypeDef *header, uint8_t *data){
-    switch(header->Identifier){
+void Process_CAN_Message(FDCAN_RxHeaderTypeDef *header, uint8_t *data) {
+    uint32_t CurentTime = HAL_GetTick();
 
-        case 0x22:
+    switch (header->Identifier) {
+        case 0x22: {
+            const uint32_t OftenToSend_0x22 = 50;
+            static uint32_t LastTime_0x22;
 
-            uint32_t CurentTime = HAL_GetTick();
-            
-            const uint32_t OftenToSend = 1000; // how often to send the message in ms
-            static uint32_t LastTime;           // Last time the message was sent
-            
-            if ((CurentTime - LastTime) > OftenToSend){
-                
-                static uint8_t ITemp[4]= {0}; // Initialize ITemp array. 1 id byte, 2 data bytes, 1 null terminator
-                static uint8_t MTemp[4]= {0};
+            if ((CurentTime - LastTime_0x22) > OftenToSend_0x22) {
+                Payload_t msg1 = {
+                    .id = 0xA2,
+                    .length = 2,
+                    .data = {data[0], data[1]}
+                };
+                xQueueSendToBackFromISR(Tx, &msg1, 0);
 
-                ITemp[0] = 0xAA;  //sensor id 
-                MTemp[0] = 0xAA;
+                Payload_t msg2 = {
+                    .id = 0x01,
+                    .length = 2,
+                    .data = {data[2], data[3]}
+                };
+                xQueueSendToBackFromISR(Tx, &msg2, 0);
 
-                ITemp[3] = '\0';
-                MTemp[3] = '\0';
-                
-                LastTime = CurentTime;
-
-                memcpy(ITemp[1], &data[0], 2);
-                memcpy(MTemp[1], &data[2], 2);
-
-
-                xQueueSendToBack(Tx, &ITemp, 0);
-                xQueueSendToBack(Tx, &MTemp, 0);
-
-                return;
+                LastTime_0x22 = CurentTime;
             }
             break;
+        }
 
-        case 0x200:
-            // Handle specific ID 0x200 for CAN2
+        case 0x23: {
+            const uint32_t OftenToSend_0x23 = 1000;
+            static uint32_t LastTime_0x23;
+
+            if ((CurentTime - LastTime_0x23) > OftenToSend_0x23) {
+                Payload_t msg1 = {
+                    .id = 0xFF,
+                    .length = 2,
+                    .data = {data[0], data[1]}
+                };
+                xQueueSendToBackFromISR(Tx, &msg1, 0);
+
+                Payload_t msg2 = {
+                    .id = 0xFE,
+                    .length = 2,
+                    .data = {data[2], data[3]}
+                };
+                xQueueSendToBackFromISR(Tx, &msg2, 0);
+
+                LastTime_0x23 = CurentTime;
+            }
             break;
+        }
+
         default:
-            // Default case or ignore
+            // Ignore other CAN messages
             break;
     }
 }
 
-void Process_CAN3_Message(FDCAN_RxHeaderTypeDef *header, uint8_t *data){
-    switch(header->Identifier){
+void Process_CAN3_Message(FDCAN_RxHeaderTypeDef *header, uint8_t *data) {
+    switch (header->Identifier) {
         case 0x300:
-            // Handle specific ID 0x300 for CAN3
+            // Handle 0x300
             break;
         case 0x400:
-            // Handle specific ID 0x400 for CAN3
+            // Handle 0x400
             break;
         default:
-            // Default case or ignore
+            // Ignore others
             break;
-    }
-}
-
-void CAN_Read(){
-    FDCAN_RxHeaderTypeDef rxHeader;
-    CANtest();
-
-    // Check CAN2 messages
-    while(Align_CAN_Receive(&hfdcan2, &rxHeader, rxData)){
-        Process_CAN_Message(&rxHeader, rxData);
-    }
-
-    // Check CAN3 messages
-    while(Align_CAN_Receive(&hfdcan3, &rxHeader, rxData)){
-        Process_CAN_Message(&rxHeader, rxData);
     }
 }
 
 int bit_get(const uint8_t *arr, int bit_index) {
     int byte = bit_index / 8;
     int bit  = 7 - (bit_index % 8);  // MSB-first
-
     return (arr[byte] >> bit) & 1;
 }
-void CANtest() {
-    typedef struct {
-        uint32_t id;
-        uint8_t data[8];
-    } TestMessage;
 
-    TestMessage testMsgs[] = {
-        { 0x100, {1, 2, 3, 4, 5, 6, 7, 8} },
-        { 0x200, {10, 20, 30, 40, 50, 60, 70, 80} },
-        { 0x300, {0xAA, 0xBB, 0xCC, 0xDD, 0, 0, 0, 0} },
-    };
-
+void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs) {
     FDCAN_RxHeaderTypeDef rxHeader;
+    uint8_t rxData[8];
 
-    for (int i = 0; i < sizeof(testMsgs)/sizeof(testMsgs[0]); i++) {
-        rxHeader.Identifier = testMsgs[i].id;
-        rxHeader.DataLength = FDCAN_DLC_BYTES_8;
-        Process_CAN_Message(&rxHeader, testMsgs[i].data);
+    if (RxFifo0ITs & FDCAN_IT_RX_FIFO0_NEW_MESSAGE) {
+        if (HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &rxHeader, rxData) == HAL_OK) {
+            BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+            if (hfdcan->Instance == FDCAN2) {
+                Process_CAN_Message(&rxHeader, rxData);
+            } else if (hfdcan->Instance == FDCAN3) {
+                Process_CAN3_Message(&rxHeader, rxData);
+            }
+
+            portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+        }
     }
 }
-
-
-
-

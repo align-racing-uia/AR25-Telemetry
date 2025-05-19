@@ -9,6 +9,10 @@
     "xutility": "c",
     "string.h": "c",
     "cmsis_os.h": "c",
-    "can-receive.h": "c"
-  }
+    "can-receive.h": "c",
+    "stdbool.h": "c",
+    "freertos.h": "c",
+    "cstdint": "c"
+  },
+  "cortex-debug.variableUseNaturalFormat": true
 }
