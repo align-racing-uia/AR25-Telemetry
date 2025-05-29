@@ -178,7 +178,6 @@ ProjectManager.ToolChainLocation=
 ProjectManager.UAScriptAfterPath=
 ProjectManager.UAScriptBeforePath=
 ProjectManager.UnderRoot=false
-ProjectManager.functionlistsort=1-SystemClock_Config-RCC-false-HAL-false,2-MX_GPIO_Init-GPIO-false-HAL-true,3-MX_FDCAN2_Init-FDCAN2-false-HAL-true,4-MX_FDCAN3_Init-FDCAN3-false-HAL-true,5-MX_USART1_UART_Init-USART1-false-HAL-true,6-MX_USART2_UART_Init-USART2-false-HAL-true,7-MX_USART3_UART_Init-USART3-false-HAL-true,8-MX_TIM8_Init-TIM8-false-HAL-true,9-MX_USB_Device_Init-USB_DEVICE-false-HAL-false
 RCC.ADC12Freq_Value=170000000
 RCC.ADC345Freq_Value=170000000
 RCC.AHBFreq_Value=170000000

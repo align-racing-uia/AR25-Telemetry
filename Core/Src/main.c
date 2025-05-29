@@ -32,6 +32,7 @@
 #include "aligncan.h"
 #include "usbd_cdc_if.h"
 #include "VN-200.h"
+#include "FreeRTOS.h"
 //#include "SEGGER_RTT.h"
 /* USER CODE END Includes */
 
@@ -100,12 +101,13 @@ int main(void)
   MX_FDCAN2_Init();
   MX_FDCAN3_Init();
   MX_USART1_UART_Init();
+  MX_DMA_Init();
   MX_USART2_UART_Init();
   MX_USART3_UART_Init();
   MX_TIM8_Init();
   /* USER CODE BEGIN 2 */
   MX_USB_Device_Init();
-
+  
 
 
   /* USER CODE END 2 */

@@ -115,28 +115,28 @@
 				{
 					"directoryIndex" : 1,
 					"id" : "FreeRTOS::@768a070a0fe75716b479",
-					"jsonFile" : "target-FreeRTOS-Debug-ab6ea4bc1513bada157e.json",
+					"jsonFile" : "target-FreeRTOS-Debug-793dcb4ca282c32e093b.json",
 					"name" : "FreeRTOS",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 1,
 					"id" : "STM32_Drivers::@768a070a0fe75716b479",
-					"jsonFile" : "target-STM32_Drivers-Debug-3021792468ad866a6ab0.json",
+					"jsonFile" : "target-STM32_Drivers-Debug-586e5831b9b39950401b.json",
 					"name" : "STM32_Drivers",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "Test2::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Test2-Debug-e902f261c78ed46751a8.json",
+					"jsonFile" : "target-Test2-Debug-2731ce41b962cdc9bcc0.json",
 					"name" : "Test2",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 1,
 					"id" : "USB_Device_Library::@768a070a0fe75716b479",
-					"jsonFile" : "target-USB_Device_Library-Debug-b13e45f6230f3c561113.json",
+					"jsonFile" : "target-USB_Device_Library-Debug-cc010ae13691fc8d65bd.json",
 					"name" : "USB_Device_Library",
 					"projectIndex" : 0
 				}
@@ -146,8 +146,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/mariu/Documents/Test2/build/debug",
-		"source" : "C:/Users/mariu/Documents/Test2"
+		"build" : "C:/Users/mariu/Documents/AR25-Telemetry/build/debug",
+		"source" : "C:/Users/mariu/Documents/AR25-Telemetry"
 	},
 	"version" : 
 	{

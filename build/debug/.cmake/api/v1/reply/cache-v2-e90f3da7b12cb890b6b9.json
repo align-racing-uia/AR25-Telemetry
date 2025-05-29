@@ -15,7 +15,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-addr2line.exe"
+			"value" : "C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/arm-none-eabi-addr2line.exe"
 		},
 		{
 			"name" : "CMAKE_AR",
@@ -31,7 +31,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-ar.exe"
+			"value" : "C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/arm-none-eabi-ar.exe"
 		},
 		{
 			"name" : "CMAKE_ASM_COMPILER_AR",
@@ -47,7 +47,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc-ar.exe"
+			"value" : "C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc-ar.exe"
 		},
 		{
 			"name" : "CMAKE_ASM_COMPILER_RANLIB",
@@ -63,7 +63,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc-ranlib.exe"
+			"value" : "C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc-ranlib.exe"
 		},
 		{
 			"name" : "CMAKE_ASM_COMPILER_WORKS",
@@ -179,7 +179,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/mariu/Documents/Test2/build/debug"
+			"value" : "c:/Users/mariu/Documents/AR25-Telemetry/build/debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -227,7 +227,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/ST/STM32CubeCLT_1.16.0/CMake/bin/cmake.exe"
+			"value" : "C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe"
 		},
 		{
 			"name" : "CMAKE_CPACK_COMMAND",
@@ -239,7 +239,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/ST/STM32CubeCLT_1.16.0/CMake/bin/cpack.exe"
+			"value" : "C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cpack.exe"
 		},
 		{
 			"name" : "CMAKE_CTEST_COMMAND",
@@ -251,7 +251,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/ST/STM32CubeCLT_1.16.0/CMake/bin/ctest.exe"
+			"value" : "C:/ST/STM32CubeCLT_1.17.0/CMake/bin/ctest.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_AR",
@@ -267,7 +267,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc-ar.exe"
+			"value" : "C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc-ar.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_RANLIB",
@@ -283,7 +283,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc-ranlib.exe"
+			"value" : "C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc-ranlib.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS",
@@ -379,7 +379,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc-ar.exe"
+			"value" : "C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc-ar.exe"
 		},
 		{
 			"name" : "CMAKE_C_COMPILER_RANLIB",
@@ -395,7 +395,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc-ranlib.exe"
+			"value" : "C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc-ranlib.exe"
 		},
 		{
 			"name" : "CMAKE_C_FLAGS",
@@ -503,7 +503,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/ST/STM32CubeCLT_1.16.0/CMake/bin/cmake-gui.exe"
+			"value" : "C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake-gui.exe"
 		},
 		{
 			"name" : "CMAKE_EXECUTABLE_FORMAT",
@@ -631,7 +631,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/mariu/Documents/Test2/build/debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/mariu/Documents/AR25-Telemetry/build/debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -691,7 +691,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/mariu/Documents/Test2"
+			"value" : "C:/Users/mariu/Documents/AR25-Telemetry"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -719,7 +719,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/ST/STM32CubeCLT_1.16.0/Ninja/bin/ninja.exe"
+			"value" : "C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -815,7 +815,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-nm.exe"
+			"value" : "C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/arm-none-eabi-nm.exe"
 		},
 		{
 			"name" : "CMAKE_NUMBER_OF_MAKEFILES",
@@ -843,7 +843,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-objdump.exe"
+			"value" : "C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/arm-none-eabi-objdump.exe"
 		},
 		{
 			"name" : "CMAKE_PLATFORM_INFO_INITIALIZED",
@@ -907,7 +907,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-ranlib.exe"
+			"value" : "C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/arm-none-eabi-ranlib.exe"
 		},
 		{
 			"name" : "CMAKE_READELF",
@@ -923,7 +923,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-readelf.exe"
+			"value" : "C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/arm-none-eabi-readelf.exe"
 		},
 		{
 			"name" : "CMAKE_ROOT",
@@ -935,7 +935,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/ST/STM32CubeCLT_1.16.0/CMake/share/cmake-3.28"
+			"value" : "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -1143,7 +1143,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-strip.exe"
+			"value" : "C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/arm-none-eabi-strip.exe"
 		},
 		{
 			"name" : "CMAKE_TAPI",
@@ -1167,11 +1167,11 @@
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "The CMake toolchain file"
 				}
 			],
-			"type" : "UNINITIALIZED",
-			"value" : "C:/Users/mariu/Documents/Test2/cmake/gcc-arm-none-eabi.cmake"
+			"type" : "FILEPATH",
+			"value" : "C:/Users/mariu/Documents/AR25-Telemetry/cmake/gcc-arm-none-eabi.cmake"
 		},
 		{
 			"name" : "CMAKE_VERBOSE_MAKEFILE",
@@ -1199,7 +1199,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/mariu/Documents/Test2/build/debug"
+			"value" : "C:/Users/mariu/Documents/AR25-Telemetry/build/debug"
 		},
 		{
 			"name" : "Test2_IS_TOP_LEVEL",
@@ -1223,7 +1223,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/mariu/Documents/Test2"
+			"value" : "C:/Users/mariu/Documents/AR25-Telemetry"
 		},
 		{
 			"name" : "asl_BINARY_DIR",
@@ -1235,7 +1235,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/mariu/Documents/Test2/build/debug/asl"
+			"value" : "C:/Users/mariu/Documents/AR25-Telemetry/build/debug/asl"
 		},
 		{
 			"name" : "asl_IS_TOP_LEVEL",
@@ -1259,7 +1259,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/mariu/Documents/Test2/asl"
+			"value" : "C:/Users/mariu/Documents/AR25-Telemetry/asl"
 		},
 		{
 			"name" : "rtt_BINARY_DIR",
@@ -1271,7 +1271,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/mariu/Documents/Test2/build/debug/asl/libs/rtt"
+			"value" : "C:/Users/mariu/Documents/AR25-Telemetry/build/debug/asl/libs/rtt"
 		},
 		{
 			"name" : "rtt_IS_TOP_LEVEL",
@@ -1295,7 +1295,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/mariu/Documents/Test2/asl/libs/rtt"
+			"value" : "C:/Users/mariu/Documents/AR25-Telemetry/asl/libs/rtt"
 		}
 	],
 	"kind" : "cache",

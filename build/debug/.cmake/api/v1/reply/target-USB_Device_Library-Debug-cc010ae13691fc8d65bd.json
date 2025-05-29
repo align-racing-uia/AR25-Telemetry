@@ -69,7 +69,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : " -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11"
+					"fragment" : " -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11"
 				}
 			],
 			"defines" : 
@@ -91,55 +91,55 @@
 			[
 				{
 					"backtrace" : 4,
-					"path" : "C:/Users/mariu/Documents/Test2/Application"
+					"path" : "C:/Users/mariu/Documents/AR25-Telemetry/Application"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "C:/Users/mariu/Documents/Test2/Core/Inc"
+					"path" : "C:/Users/mariu/Documents/AR25-Telemetry/Core/Inc"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "C:/Users/mariu/Documents/Test2/USB_Device/App"
+					"path" : "C:/Users/mariu/Documents/AR25-Telemetry/USB_Device/App"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "C:/Users/mariu/Documents/Test2/USB_Device/Target"
+					"path" : "C:/Users/mariu/Documents/AR25-Telemetry/USB_Device/Target"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "C:/Users/mariu/Documents/Test2/Drivers/STM32G4xx_HAL_Driver/Inc"
+					"path" : "C:/Users/mariu/Documents/AR25-Telemetry/Drivers/STM32G4xx_HAL_Driver/Inc"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "C:/Users/mariu/Documents/Test2/Drivers/STM32G4xx_HAL_Driver/Inc/Legacy"
+					"path" : "C:/Users/mariu/Documents/AR25-Telemetry/Drivers/STM32G4xx_HAL_Driver/Inc/Legacy"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "C:/Users/mariu/Documents/Test2/Middlewares/Third_Party/FreeRTOS/Source/include"
+					"path" : "C:/Users/mariu/Documents/AR25-Telemetry/Middlewares/Third_Party/FreeRTOS/Source/include"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "C:/Users/mariu/Documents/Test2/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2"
+					"path" : "C:/Users/mariu/Documents/AR25-Telemetry/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "C:/Users/mariu/Documents/Test2/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F"
+					"path" : "C:/Users/mariu/Documents/AR25-Telemetry/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "C:/Users/mariu/Documents/Test2/Middlewares/ST/STM32_USB_Device_Library/Core/Inc"
+					"path" : "C:/Users/mariu/Documents/AR25-Telemetry/Middlewares/ST/STM32_USB_Device_Library/Core/Inc"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "C:/Users/mariu/Documents/Test2/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc"
+					"path" : "C:/Users/mariu/Documents/AR25-Telemetry/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "C:/Users/mariu/Documents/Test2/Drivers/CMSIS/Device/ST/STM32G4xx/Include"
+					"path" : "C:/Users/mariu/Documents/AR25-Telemetry/Drivers/CMSIS/Device/ST/STM32G4xx/Include"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "C:/Users/mariu/Documents/Test2/Drivers/CMSIS/Include"
+					"path" : "C:/Users/mariu/Documents/AR25-Telemetry/Drivers/CMSIS/Include"
 				}
 			],
 			"language" : "C",

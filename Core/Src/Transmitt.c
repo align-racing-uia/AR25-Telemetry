@@ -12,7 +12,7 @@
 
 extern USBD_HandleTypeDef hUsbDeviceFS;
 extern QueueHandle_t Tx;
-
+int isSent = 1;
 
 
 void TxTask(void *argument) {
@@ -22,14 +22,13 @@ void TxTask(void *argument) {
     while (1) {
         configASSERT(Tx != NULL);
         configASSERT(xTaskGetSchedulerState() == taskSCHEDULER_RUNNING);
-        // Wait for a message to be available in the queue
+
         if (xQueueReceive(Tx, &msg, portMAX_DELAY) == pdTRUE) {
             char buffer[64];
             int len = 0;
 
-            // Format: ID + each data byte
             len += sprintf(&buffer[len], "%02X ", msg.id);
-            for (int i = 0; i < msg.length && i < sizeof(msg.data); i++) {
+            for (int i = 0; i < msg.length; i++) {
                 len += sprintf(&buffer[len], "%02X ", msg.data[i]);
             }
 
@@ -37,15 +36,17 @@ void TxTask(void *argument) {
             buffer[len++] = '\n';
             buffer[len] = '\0';
 
-            if (hUsbDeviceFS.dev_state == USBD_STATE_CONFIGURED) {
-                while (!usb_tx_ready) {
-                    //vTaskDelay(pdMS_TO_TICKS(500));
-                    
+            if (isSent) {
+                if (HAL_UART_Transmit_DMA(&huart1, (uint8_t*)buffer, len) == HAL_OK) {
+                    isSent = 0;
                 }
-                usb_tx_ready = 0;
-                CDC_Transmit_FS((uint8_t *)buffer, len);
             }
-            
         }
     }
+}
+
+void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
+{
+    isSent = 1;
+   
 }
