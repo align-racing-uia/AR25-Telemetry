@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "cmsis_os.h"
+#include "dma.h"
 #include "fdcan.h"
 #include "tim.h"
 #include "usart.h"
@@ -98,13 +99,13 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_FDCAN2_Init();
   MX_FDCAN3_Init();
+  MX_TIM8_Init();
   MX_USART1_UART_Init();
-  MX_DMA_Init();
   MX_USART2_UART_Init();
   MX_USART3_UART_Init();
-  MX_TIM8_Init();
   /* USER CODE BEGIN 2 */
   MX_USB_Device_Init();
   

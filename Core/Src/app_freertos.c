@@ -159,8 +159,8 @@ void MX_FREERTOS_Init(void) {
 
   const osThreadAttr_t Tx_atributes = {
     .name = "TxTask",
-    .priority = (osPriority_t) osPriorityAboveNormal1,
-    .stack_size = 4048    
+    .priority = (osPriority_t) osPriorityNormal,
+    .stack_size =  8096    
   };
 
   /* Create the BlinkRLEDTask */
@@ -168,10 +168,10 @@ void MX_FREERTOS_Init(void) {
   const osThreadAttr_t vnTask_attributes = {
     .name = "VNUARTTask",
     .priority = (osPriority_t) osPriorityNormal,
-    .stack_size = 4048   
+    .stack_size = 8096   
   };
   
-  osThreadNew(VNUARTTask, NULL, &vnTask_attributes);
+  //osThreadNew(VNUARTTask, NULL, &vnTask_attributes);
   osThreadNew(TxTask, NULL, &Tx_atributes);
   /* USER CODE END RTOS_THREADS */
 
@@ -196,9 +196,7 @@ void StartDefaultTask(void *argument)
   /* Infinite loop */
   for(;;)
   {
-    //HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
-
-    vTaskDelay(pdMS_TO_TICKS(500));
+    osDelay(1);
   }
   /* USER CODE END StartDefaultTask */
 }

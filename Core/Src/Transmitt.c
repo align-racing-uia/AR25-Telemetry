@@ -3,28 +3,23 @@
 #include "task.h"
 #include "queue.h"
 #include "cmsis_os2.h"
-
-#include "usbd_cdc_if.h"
-#include "usb_device.h"
 #include "usart.h"
-#include "usbd_def.h"  // Needed for USBD_STATE_CONFIGURED
-#include "usbd_cdc_if.h"
 
-extern USBD_HandleTypeDef hUsbDeviceFS;
 extern QueueHandle_t Tx;
-int isSent = 1;
 
+int isSent = 1;
 
 void TxTask(void *argument) {
     Payload_t msg;
-    usb_tx_ready = 1;
-
+    
+    
     while (1) {
         configASSERT(Tx != NULL);
         configASSERT(xTaskGetSchedulerState() == taskSCHEDULER_RUNNING);
+        
 
         if (xQueueReceive(Tx, &msg, portMAX_DELAY) == pdTRUE) {
-            char buffer[64];
+            char buffer[128];
             int len = 0;
 
             len += sprintf(&buffer[len], "%02X ", msg.id);
@@ -35,18 +30,34 @@ void TxTask(void *argument) {
             buffer[len++] = '\r';
             buffer[len++] = '\n';
             buffer[len] = '\0';
+            //isSent = 1;
+
+
 
             if (isSent) {
-                if (HAL_UART_Transmit_DMA(&huart1, (uint8_t*)buffer, len) == HAL_OK) {
-                    isSent = 0;
-                }
-            }
-        }
+                uint8_t tx_buf[3 + msg.length];
+                tx_buf[0] = 0xFE;             // startbyte
+                tx_buf[1] = msg.id;
+                tx_buf[2] = msg.length;
+                memcpy(&tx_buf[3], msg.data, msg.length);
+
+    if (HAL_UART_Transmit_DMA(&huart2, tx_buf, 3 + msg.length) == HAL_OK) {
+        isSent = 0;
+        vTaskDelay(pdMS_TO_TICKS(5));
+        
+    } else {
+        HAL_GPIO_WritePin(RLED_GPIO_Port, RLED_Pin, GPIO_PIN_SET);
+    }
+}
+        }   
     }
 }
 
-void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
+__attribute__((used)) void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
 {
-    isSent = 1;
-   
+    if (huart->Instance == USART2) {
+        isSent = 1;
+    }
 }
+
+

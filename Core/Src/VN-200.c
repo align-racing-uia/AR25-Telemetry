@@ -27,7 +27,8 @@ void VNUARTTask(void *argument)
     uint16_t pos = 0;
 
     for (;;) {
-        if (HAL_UART_Receive(&huart2, &byte, 1, 1000) == HAL_OK) {
+        //osDelay(100); // Yield to other tasks
+        if (HAL_UART_Receive(&huart1, &byte, 1, 1000) == HAL_OK) {
             if (byte == '*' || pos >= sizeof(line) - 2) {
                 line[pos] = '\0';
 

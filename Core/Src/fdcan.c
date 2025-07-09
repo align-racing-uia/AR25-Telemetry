@@ -62,12 +62,6 @@ void MX_FDCAN2_Init(void)
   }
   /* USER CODE BEGIN FDCAN2_Init 2 */
   FDCAN_FilterTypeDef filter = {
-    .IdType = FDCAN_STANDARD_ID,
-    .FilterIndex = 0,
-    .FilterType = FDCAN_FILTER_MASK,
-    .FilterConfig = FDCAN_FILTER_TO_RXFIFO0,
-    .FilterID1 = 0,    // ID to match
-    .FilterID2 = 0x7FF          // Mask: match exactly 0x123
 };
 
 HAL_FDCAN_ConfigFilter(&hfdcan2, &filter);
