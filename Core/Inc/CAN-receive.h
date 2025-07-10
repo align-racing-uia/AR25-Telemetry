@@ -138,12 +138,12 @@ void Process_CAN_Message(FDCAN_RxHeaderTypeDef *header, uint8_t *data)
 
         if ((CurentTime - LastTime_0x11E) > OftenToSend_0x11E)
         {
-            Payload_t driveEnableMsg = {
+            Payload_t CommandedCurrent = {
                 .id = 0x05,
-                .length = 1,
-                .data = {data[0]} // send full byte, you can mask bit 0 if needed elsewhere
+                .length = 2,
+                .data = {data[0], data[1]}
             };
-            xQueueSendToBackFromISR(Tx, &driveEnableMsg, &xHigherPriorityTaskWoken);
+            xQueueSendToBackFromISR(Tx, &CommandedCurrent, &xHigherPriorityTaskWoken);
 
             LastTime_0x11E = CurentTime;
         }
@@ -160,7 +160,7 @@ void Process_CAN_Message(FDCAN_RxHeaderTypeDef *header, uint8_t *data)
             Payload_t VCUError = {
                 .id = 0x05,
                 .length = 1,
-                .data = {data[3]} // send full byte, you can mask bit 0 if needed elsewhere
+                .data = {data[3]}
             };
             xQueueSendToBackFromISR(Tx, &VCUError, &xHigherPriorityTaskWoken);
 
@@ -175,6 +175,12 @@ void Process_CAN_Message(FDCAN_RxHeaderTypeDef *header, uint8_t *data)
                 .length = 1,
                 .data = {data[0]}};
             xQueueSendToBackFromISR(Tx, &Throttle1, &xHigherPriorityTaskWoken);
+
+            Payload_t DriveEnable = {
+                .id = 0x05,
+                .length = 1,
+                .data = {data[0]}};
+            xQueueSendToBackFromISR(Tx, &DriveEnable, &xHigherPriorityTaskWoken);
 
             LastTime_0x25 = CurentTime;
         }
